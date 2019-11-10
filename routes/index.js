@@ -6,11 +6,18 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Yongho Kim' });
 });
 
-router.get('/login', function(req, res, next) {
-  res.send({result:'login complete'})
+router.post('/login', function(req, res, next) {
+	console.log('login!!!')
+	console.log(req.body.id)
+	console.log(req.body.password)
+	console.log(req.body)
+  res.send({result:'login complete', 
+  	id:req.body.id,
+  	password:req.body.password
+  })
 });
 
-router.get('/register', function(req, res, next) {
+router.post('/register', function(req, res, next) {
   res.send({result:'register complete'})
 });
 
